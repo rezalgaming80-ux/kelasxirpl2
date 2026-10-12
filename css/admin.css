@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* { 
+    box-sizing: border-box; 
+    font-family: 'Poppins', sans-serif; 
+    margin: 0; 
+    padding: 0; 
+}
+
+body { 
+    display: flex; 
+    background-color: #f0f4f8; 
+    color: #333; 
+    min-height: 100vh;
+}
+
+/* Sidebar Flexbox Fix Layout */
+.sidebar { 
+    width: 260px; 
+    background: #1a1a2e; 
+    color: #fff; 
+    height: 100vh; 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    padding: 24px 18px; 
+    display: flex; 
+    flex-direction: column; 
+    z-index: 1000;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.1);
+}
+
+.sidebar h2 { 
+    color: #e94560; 
+    text-align: center; 
+    margin-bottom: 25px; 
+    font-size: 1.3rem; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.sidebar a { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    color: #a0a5b5; 
+    text-decoration: none; 
+    padding: 12px 16px; 
+    border-radius: 10px; 
+    transition: all 0.3s ease; 
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.sidebar a:hover { 
+    background: #0f3460; 
+    color: #fff; 
+    transform: translateX(4px);
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.btn-sub { background: #0f3460 !important; color: #fff !important; }
+.btn-logout { background: #e94560 !important; color: #fff !important; }
+
+/* Main Content Spacing & Margin Fix */
+.main-content { 
+    margin-left: 260px; 
+    width: calc(100% - 260px); 
+    padding: 35px 40px; 
+    min-height: 100vh;
+}
+
+.admin-header { 
+    margin-bottom: 2rem; 
+    background: #fff;
+    padding: 20px 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    border-left: 5px solid #0f3460;
+}
+
+.admin-header h1 {
+    font-size: 1.6rem;
+    color: #0f3460;
+}
+
+.admin-header p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+.card { 
+    background: #fff; 
+    padding: 25px; 
+    border-radius: 14px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.04); 
+    margin-bottom: 30px; 
+    scroll-margin-top: 20px;
+}
+
+.card h3 { 
+    color: #0f3460; 
+    margin-bottom: 20px; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    font-size: 1.15rem;
+    border-bottom: 2px solid #f0f4f8;
+    padding-bottom: 12px;
+}
+
+.card h3 i { color: #e94560; }
+
+/* Grid Forms Layout */
+.form-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 18px; 
+    margin-bottom: 20px;
+}
+
+.form-group { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 6px; 
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: #444;
+}
+
+.full-width { grid-column: 1 / -1; }
+
+input, select, textarea { 
+    padding: 11px 14px; 
+    border: 1px solid #dcdfe6; 
+    border-radius: 8px; 
+    outline: none; 
+    font-size: 0.92rem; 
+    transition: 0.3s;
+    background: #fafafa;
+}
+
+input:focus, select:focus, textarea:focus { 
+    border-color: #0f3460; 
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(15,52,96,0.1);
+}
+
+textarea { resize: vertical; min-height: 90px; }
+
+/* Table responsive fix */
+.table-responsive { 
+    overflow-x: auto; 
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+}
+
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    min-width: 650px; 
+}
+
+th, td { 
+    padding: 12px 16px; 
+    text-align: left; 
+    border-bottom: 1px solid #eee; 
+    font-size: 0.9rem;
+}
+
+th { 
+    background: #0f3460; 
+    color: #fff; 
+    font-weight: 600;
+}
+
+tr:nth-child(even) { background: #fafbfc; }
+tr:hover { background: #f1f5f9; }
+
+.thumb-img { width: 60px; height: 45px; object-fit: cover; border-radius: 6px; }
+.thumb-avatar { width: 40px; height: 40px; object-fit: cover; border-radius: 50%; }
+
+.badge-day {
+    background: #eef2f5;
+    color: #0f3460;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.role-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #fff;
+    display: inline-block;
+}
+
+.role-wali { background: #2980b9; }
+.role-ketua { background: #c0392b; }
+.role-wakil { background: #d35400; }
+.role-sekretaris { background: #8e44ad; }
+.role-bendahara { background: #27ae60; }
+.role-siswa { background: #7f8c8d; }
+
+/* Buttons */
+.btn { 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 8px; 
+    color: #fff; 
+    cursor: pointer; 
+    text-decoration: none; 
+    font-size: 0.9rem; 
+    font-weight: 500;
+    display: inline-flex; 
+    align-items: center; 
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.btn-primary { background: #0f3460; } 
+.btn-primary:hover { background: #16213e; transform: translateY(-2px); }
+.btn-danger { background: #e94560; }
+.btn-danger:hover { background: #c0392b; }
+.btn-sm { padding: 6px 12px; font-size: 0.8rem; border-radius: 6px; }
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .sidebar { width: 70px; padding: 15px 8px; }
+    .sidebar h2 span, .sidebar a span { display: none; }
+    .sidebar a { justify-content: center; padding: 12px; }
+    .main-content { margin-left: 70px; width: calc(100% - 70px); padding: 20px; }
+    .form-grid { grid-template-columns: 1fr; }
+}
+
+
+.admin-note { margin: -8px 0 20px; padding: 12px 14px; color: #4b6077; background: #eef6fb; border-left: 4px solid #00a7a0; border-radius: 8px; font-size: 0.88rem; }
+.role-developer { background: #0f3460; }
+
+
+/* --- Admin alerts and account settings --- */
+.admin-alert { margin: 0 0 1.25rem; padding: 0.9rem 1.1rem; border-radius: 10px; border: 1px solid; font-weight: 600; }
+.admin-alert.success { color: #126b3c; background: #e9fbf0; border-color: #7bd7a5; }
+.admin-alert.error { color: #9d2537; background: #fff0f2; border-color: #f4a3af; }
+.admin-alert i { margin-right: 0.45rem; }
+.card#akun { border-top: 4px solid #e94560; }
+.card#akun code { color: #e94560; font-weight: 700; }
+
+
+.developer-edit-box { margin: 0 0 24px; padding: 20px; border: 1px solid rgba(15, 52, 96, 0.14); border-radius: 12px; background: #f8fbff; }
+.developer-edit-box h4, .admin-subheading { color: #0f3460; margin-bottom: 12px; }
